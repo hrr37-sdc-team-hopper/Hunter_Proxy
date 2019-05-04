@@ -9,28 +9,38 @@ app.use(morgan('dev'));
 
 const staticPath = `${__dirname}/../public`;
 app.use('/books/:id', express.static(staticPath));
-
+//(Jordis) Andrew-Service
+/*
 app.use(
-  '/books/:id/details',
-  proxy({ target: 'http://localhost:3001', changeOrigin: true }),
+	'/books/:id/details',
+	proxy({ target: 'http://localhost:3001', changeOrigin: true })
 );
 
-// hannah-service
+// (Daniel)hannah-service
 app.use(
-  '/books/:id/reviews',
-  proxy({ target: 'http://localhost:3003', changeOrigin: true }),
+	'/books/:id/reviews',
+	proxy({
+		target: 'http://ec2-18-216-231-60.us-east-2.compute.amazonaws.com:3003',
+		changeOrigin: true
+	})
 );
 
-// kaz-service
+//(Ike) kaz-service
 app.use(
-  '/books/:id/info',
-  proxy({ target: 'http://localhost:3002', changeOrigin: true }),
+	'/books/:id/info',
+	proxy({
+		target: 'http://ec2-54-219-181-249.us-west-1.compute.amazonaws.com:3002',
+		changeOrigin: true
+	})
 );
-
-// ginger-service
+*/
+// (Hunter)ginger-service
 app.use(
-  '/books/:id/authors',
-  proxy({ target: 'http://localhost:3000', changeOrigin: true }),
+	'/books/:id/authors',
+	proxy({
+		target: 'http://ec2-3-83-42-150.compute-1.amazonaws.com:3000',
+		changeOrigin: true
+	})
 );
 
 module.exports = app;
